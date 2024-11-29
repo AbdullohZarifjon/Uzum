@@ -11,7 +11,7 @@
     </style>
     <script>
         function redirectToRegister() {
-            window.location.href = '/Register.jsp'; // Register tugmasini bosganda yo'naltiriladigan URL
+            window.location.href = '/Register.jsp';
         }
     </script>
 </head>

@@ -19,25 +19,28 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String phoneNumber = req.getParameter("phone");
         String password = req.getParameter("password");
-        if (password != null && phoneNumber != null) {
-            Optional<User> first = DB.users.stream().filter(p -> p.getPhoneNumber().equals(phoneNumber)
-                    && p.getPassword().equals(password)).findFirst();
-            if (first.isPresent()) {
-                currentUser = first.get();
-                HttpSession session = req.getSession();
-                Basket basket = (Basket) session.getAttribute("user");
-                currentUser.setBasket(basket);
+        Optional<User> first = DB.users.stream().filter(p -> p.getPhoneNumber().equals(phoneNumber)
+                && p.getPassword().equals(password)).findFirst();
+
+        if (first.isPresent()) {
+            HttpSession session = req.getSession();
+            currentUser = first.get();
+            if (currentUser.getRole().toString().equalsIgnoreCase("admin")) {
+                currentUser.setBasket(new Basket());
                 session.setAttribute("user", currentUser);
                 resp.sendRedirect("/addProduct.jsp");
             } else {
-                resp.sendRedirect("/Login.jsp");
+                Basket basket = (Basket) session.getAttribute("user");
+                currentUser.setBasket(basket);
+                session.setAttribute("user", currentUser);
+                resp.sendRedirect("/main.jsp");
             }
         } else {
-            resp.sendRedirect("/Register.jsp");
+            resp.sendRedirect("/Login.jsp");
         }
+
     }
 
 }
