@@ -15,7 +15,7 @@ public class User {
     private String password;
     private Status role;
     private Basket basket;
-    private static int genId = 0;
+    private static int genId = 1;
 
     public User(String name, String phoneNumber, String password, Status role, Basket basket) {
         this.name = name;

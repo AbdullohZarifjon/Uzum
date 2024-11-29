@@ -12,7 +12,7 @@ public class OrderItem {
     private int orderId;
     private int productId;
     private double price;
-    private static int genId = 0;
+    private static int genId = 1;
 
     public OrderItem(int orderId, int productId, double price) {
         this.orderId = orderId;

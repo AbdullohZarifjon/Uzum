@@ -114,7 +114,7 @@
         map = basket.getBasket();
     } else if (object instanceof User) {
         User user = (User) object;
-        if (user.getRole().equals("admin")) {
+        if (user.getRole().toString().equals("admin")) {
             user.setBasket(new Basket());
         } else {
             basket = user.getBasket();
@@ -155,7 +155,7 @@
                 <button class="btn btn-primary me-2">Admin</button>
             </form>
 
-            <form action="/savatcha.jsp" class="d-inline" method="post">
+            <form action="/Savatcha.jsp" class="d-inline" method="post">
                 <button name="categoryName" value="<%=categoryName%>" class="btn btn-primary">
                     Savatcha <%=map.size()%>
                 </button>
@@ -195,9 +195,9 @@
                             File file = new File(application.getRealPath("/images/" + product.getPath()));
                             String imagePath = "";
                             if (file.exists()) {
-                                imagePath = "/images/" + product.getPath();  // Fayl yo'li to'g'rilandi
+                                imagePath = "/images/" + product.getPath();
                             } else {
-                                imagePath = "/images/default-image.jpg";  // Fayl topilmasa, default rasm qo'yamiz
+                                imagePath = "/images/default-image.jpg";
                             }
                         %>
                         <img src="<%=imagePath%>" alt="<%= product.getName() %>" class="product-img img-fluid mb-2">

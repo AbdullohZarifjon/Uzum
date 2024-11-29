@@ -15,7 +15,7 @@ public class Order {
     private int userId;
     private Status status;
     private Date date;
-    private static int genId = 0;
+    private static int genId = 1;
 
     public Order(int userId, Status status, Date date) {
         this.userId = userId;

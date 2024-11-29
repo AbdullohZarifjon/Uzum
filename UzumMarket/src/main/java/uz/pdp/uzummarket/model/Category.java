@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Category {
     private int id = genId ++;
     private String name;
-    private static int genId = 0;
+    private static int genId = 1;
 
     public Category(String name) {
         this.name = name;
