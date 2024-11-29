@@ -8,10 +8,10 @@ import java.util.List;
 public interface DB {
 
     List<User> users = new ArrayList<>(List.of(
-            new User("Usmon", "123", "123", Status.USER, new uz.pdp.L.model.Basket()),
-            new User("Bahrom", "234", "234", Status.USER, new uz.pdp.L.model.Basket()),
-            new User("Mikhail", "345", "345", Status.USER, new uz.pdp.L.model.Basket()),
-            new User("Casha", "456", "456", Status.USER, new uz.pdp.L.model.Basket()),
+            new User("Usmon", "123", "123", Status.USER, new Basket()),
+            new User("Bahrom", "234", "234", Status.USER, new Basket()),
+            new User("Mikhail", "345", "345", Status.USER, new Basket()),
+            new User("Casha", "456", "456", Status.USER, new Basket()),
             new User("admin", "admin", "admin", Status.ADMIN, null)
     ));
 

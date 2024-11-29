@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import uz.pdp.uzummarket.D_B.Status;
-import uz.pdp.L.model.Basket;
+import uz.pdp.uzummarket.model.Basket;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

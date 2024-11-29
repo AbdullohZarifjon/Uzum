@@ -1,4 +1,4 @@
-package uz.pdp.L.model;
+package uz.pdp.uzummarket.model;
 
 import lombok.Data;
 import uz.pdp.uzummarket.model.Product;
